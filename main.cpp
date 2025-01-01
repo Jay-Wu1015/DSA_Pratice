@@ -12,14 +12,19 @@ public:
     MyStrArray(string str): strVector{str}, length{1}{
    }
 
-    string getString(){ 
-    return strVector[length];
+   string getString(){ 
+      return strVector[length-1];
    }
 
-    void pushStr(string s){
+   void pushStr(string s){
       strVector.push_back(s);
       length++;
    }
+   void deleteStr(){
+      strVector.pop_back();
+      length--;
+   }
+
 };
 
 int main(){
@@ -32,9 +37,17 @@ cout<<"String Length:"<<newArray.length<<endl;
 
 cout<<"String :"<<newArray.getString()<<endl;
 
-cout<<"\n========================"<<endl;
+cout<<"\n============add item============"<<endl;
 
 newArray.pushStr("Ken");
+
+cout<<"String Length:"<<newArray.length<<endl;
+
+cout<<"String :"<<newArray.getString()<<endl;
+
+cout<<"\n============delete last item============"<<endl;
+
+newArray.deleteStr();
 
 cout<<"String Length:"<<newArray.length<<endl;
 
